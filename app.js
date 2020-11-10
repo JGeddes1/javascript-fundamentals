@@ -6,7 +6,7 @@
 // ! Variables
 
 // let name = "John";
-// let address,zip ,state;
+ //let address,zip ,state;
 // console.log(address);
 // console.log(name);
 
@@ -21,9 +21,9 @@
 
 // !String Concatenation - combine string values
 
-// const name = "john";
-// const lastName = "shaebeake"
-// let fullName = name + ' ' + lastName;
+ const name = "john";
+ const lastName = "shaebeake"
+ let fullName = name + ' ' + lastName;
 
 
 // console.log("hello there your full name is : " + name + " " + lastName );
@@ -39,12 +39,12 @@
 // 
 
 //! additional features
-let number = 40;
-number += 5; //add 5
-number += 5; //add 5
-number += 5; //add 5
-number += 5; //add 5
-number += 5; //add 5
+// let number = 40;
+// number += 5; //add 5
+// number += 5; //add 5
+// number += 5; //add 5
+// number += 5; //add 5
+// number += 5; //add 5
 
 // ? Modulus (%) operator returns remainder aftrer integer division
 const slices = 10;
@@ -54,4 +54,29 @@ const amount = slices % children;
 // ?BIDMAS basiclayy
 
 //!Implicit typer conversion
+
+
+
+// const value = name - lastName;  //?cant do string
+// console.log(value);
+
+let number3 = 10; // ?string converted if its number thanks to javascript
+let number4 = 23;
+
+// 100 line code
+number4 = 'pants';
+
+const result2 = number3 + number4;
+console.log(result2);
+
+/* add wont work tho */
+
+
+// ! Data TYPES
+
+// Primitive - String, Number, Boolean , Null,  Undefined, Symbol
+// Object - Arrays, Functions, Objects
+
+
+// ! ARRAYS 
 
