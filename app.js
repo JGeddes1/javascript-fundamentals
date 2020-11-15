@@ -518,4 +518,127 @@ function hello(){
 // }
 
 // !TERNARY OPERATOR
+// // unary operator - typeof
+// let text = 'some text';
+// console.log(typeof text);
+// // binary operator - assignment
+// let number = 3;
+// let number2 = 2+5;
+// // ternary operator
+// // condition ? (runs if true) : (runs if false)
 
+// const value = 1 < 0;
+
+// value ? console.log('value is true') : console.log('value is false');
+
+// // if (value) {
+// //     console.log(`value is true`);
+// // } else {
+// //     console.log(`value is false`);
+// // }
+
+
+// !global scope vs local scope
+// any variable outside code block {} is sadi to be in global scope
+// accessed anywhere in program
+// gotchas: name collisions, modify by mistake
+
+// let name = 'bobo';
+// name = 'peter';
+
+// function calculate(){
+//     // some other code....
+//     console.log(name);
+//     name = 'orange';
+
+//     function inner(){
+//         name = 'inner name value';
+//         console.log(`this is from inner function ${name}`);
+//     }
+//     inner();
+// }
+// calculate();
+
+// if (true) {
+//     // some other code....
+//     console.log(name);
+//     name = 'pants';
+// }
+// console.log(`my name is ${name} and im awesome`);
+
+// !LOCAL SCOPE
+// can not be access from outside code blaock
+// // if- not var
+// let name = 'bobo';
+
+
+// function calculate(){
+//     // some other code....
+//     const name = 'john';
+//     const age = 25;
+//     //code goes here
+//  becomesGlobal = 'global variable';
+// }
+
+//  calculate();
+//  console.log(becomesGlobal);
+// if (true) {
+//     const name = 'john';
+// }
+// console.log(`my name is ${name} and im awesome`);
+
+// !Variable lookup
+// {} code block
+
+// const globalNumber = 5; //tehn global
+
+// function add(num1, num2){
+//     const globalNumber = 20; //will use local first
+//     const result = num1 + num2 + globalNumber;
+//     function multiply(){
+//         const globalNumber = 100; // works same in this but then moves up to the other function it is enclosed in
+//         const multiplyResult = result * globalNumber;
+//         console.log(multiplyResult);
+//     }
+
+    
+//     multiply();
+//     return result;
+// }
+
+
+// console.log(add(3,4));
+
+
+//  !Callback functions, Higher order functions, functions as first class objkects/ciotizens
+
+// Functions are first class objects - stored in a variable (expression), passed as an argument to another function, return from the function (closure)
+
+// Higher Order function - accepts another function as an argument or returns another function as a result
+
+// Callback function - passed to a another function as an an argument and exectued inside taht function
+
+
+// function greetMorning(name) {
+//     const myName = 'Jamie';
+//     console.log(`Good morning ${name}, my name is ${myName} `);
+// }
+// function greetAfternoon(name) {
+//     const myName = 'Jamie';
+//     console.log(`Good afternoon ${name}, my name is ${myName} `);
+// }
+
+function morning(name){
+
+    return `good morning ${name.toUpperCase()}`;
+}
+
+function greet(name, cb) {
+    
+    const myName = 'Jamie';
+    console.log(`${cb(name)}, my name is ${myName} `);
+}
+
+
+
+greet('bobo', morning);
