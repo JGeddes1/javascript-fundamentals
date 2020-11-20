@@ -1187,4 +1187,216 @@ const numbers = [0,1,2,3,4];
 
 
 //!Mouse Events
+// click - fires after full action occours
+// mousedown - button is pressed
+// mouseup - button is released
+// mouseenter - moved onto an element
+// mouseleave - moved out of an element
 
+// const btn = document.querySelector('.btn');
+// const heading = document.querySelector('h2');
+
+// btn.addEventListener('click', function(){
+//     console.log('you clicked me');
+// });
+
+
+// btn.addEventListener('mousedown', function(){
+//     console.log('down');
+// });
+
+
+// btn.addEventListener('mouseup', function(){
+//     console.log('up');
+// });
+
+
+// heading.addEventListener('mouseenter', function(){
+//     heading.classList.add('red');
+// });
+// heading.addEventListener('mouseleave', function(){
+//     heading.classList.remove('red');
+// });
+
+
+
+// !Key Events
+// keypress - when key is pressed
+// keydown - when key is down
+// keyup - when key is released
+
+// const nameInput = document.getElementById('name');
+
+// // nameInput.addEventListener('keypress', function(){
+// //     console.log('you rpessed a key');
+// // })
+
+// // nameInput.addEventListener('keydown', function(){
+// //     console.log('you rpessed a key');
+// // })
+// nameInput.addEventListener('keyup', function(){
+//     console.log(nameInput.value);
+// })
+
+
+// !Event Object
+
+// event object argument ,event
+// info about triggered event
+// event.type
+// event.currentTarget
+// this keyword
+// preventDefault() - prevents default behaviour
+
+// const heading = document.querySelector('h1');
+// const btn = document.querySelector('.btn');
+// const lnk = document.getElementById('link');
+
+// heading.addEventListener('click', function(event){
+//  console.log(event.currentTarget);
+// });
+
+// btn.addEventListener('click', function(event){
+//  event.currentTarget.classList.add('blue');
+
+// });
+
+// function someFunc(e){
+// e.preventDefault();
+// }
+
+// link.addEventListener('click', someFunc)
+
+
+// !CurrentTarget vs Target
+// currentTarget-always refers to the element wo thwich the event hanlder has been attached to 
+// target - identifies the elment on which teh event occuired
+
+// const btns = document.querySelectorAll('.btn');
+
+// btns.forEach(function(btn){
+// btn.addEventListener('click', function(e){
+//     // console.log(e.currentTarget);
+//     // e.currentTarget.style.color = 'green';
+//     console.log('target', e.target);
+//     e.target.style.color = 'green';
+
+// });
+// });
+
+
+// !Event Bubbling Capturing
+// allows sleect dynamic elements
+// event propogation - order the events are fired
+// event bubbling - clicked element first then bubbles up --
+// default
+// devent capturing - fires at the root and fires until reaches target
+
+
+
+// const container = document.querySelector('.container');
+// const list = document.querySelector('.list-items');
+
+// function showBubbling(e){
+// console.log('current target',e.currentTarget);
+// console.log('target',e.target);
+// if (e.target.classList.contains('link')) {
+//     console.log('you clicked on the link');
+// }
+// }
+
+// function stopPropagation(e){
+// e.stopPropagation();
+// }
+
+// list.addEventListener('click', showBubbling, {capture: true});
+// container.addEventListener('click', showBubbling, {capture: true});
+// document.addEventListener('click', showBubbling, {capture: true});
+// window.addEventListener('click', showBubbling, {capture: true});
+
+// !Event Bubbling Capturing EXAMPLE
+// allows sleect dynamic elements
+// event propogation - order the events are fired
+// event bubbling - clicked element first then bubbles up --
+// default
+// devent capturing - fires at the root and fires until reaches target
+
+// const container = document.querySelector('.container');
+// const btn = document.querySelector('.btn');
+// // const heading = document.querySelector('.heading');
+
+// function sayHello(){
+//     console.log('hello there');
+// }
+
+
+// btn.addEventListener('click', function(){
+//     const element = document.createElement('h1');
+//     element.classList.add('heading');
+//     element.textContent = `i'm inside the container`;
+//     container.appendChild(element);
+// })
+
+// container.addEventListener('click', function(e){
+// if (event.target.classList.contains('heading')) { //event is long term for ew wich seems deprecated
+//     console.log('hello');
+// }
+// })
+// // heading.addEventListener('click',sayHello);
+
+// ! FORM SUBMISSION
+// submit event listener
+// oprevent default
+// how ot get a value
+
+// const form = document.getElementById('form');
+// const name = document.getElementById('name');
+// const password = document.getElementById('password');
+
+
+// form.addEventListener('submit', function(e){
+// e.preventDefault();
+//     console.log('form submitted');
+//     console.log(name.value);
+//     console.log(password.value);
+// })
+
+
+// !WEB STORAGE API - provided by the browser
+// session storage, local storage
+// setItem, getItem, removeItem, clear
+
+//  localStorage.setItem('name', 'john');
+//  sessionStorage.setItem('name', 'john');
+// localStorage.setItem('name', 'john');
+// localStorage.setItem('friend', 'peter');
+// localStorage.setItem('job', 'developer');
+// localStorage.setItem('address', 'street123');
+
+// const name = localStorage.getItem('name');
+// console.log(name);
+// localStorage.removeItem('name');
+// const anotherName = localStorage.getItem('name');
+// console.log(anotherName);
+// localStorage.clear();
+
+
+// ! JSON.stringify(), JSON.parse()
+
+const friendss = ['john','peter', 'bob'];
+
+localStorage.setItem('friends', JSON.stringify(friendss));
+
+const values = JSON.parse(localStorage.getItem('friends'));
+console.log(values[0]);
+
+let fruits;
+
+if (localStorage.getItem('fruits')) {
+    fruits = JSON.parse(localStorage.getItem('fruits'))
+}else{
+    fruits = [];
+}
+
+
+console.log(fruits);
